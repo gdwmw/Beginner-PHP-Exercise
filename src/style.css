@@ -1,0 +1,16 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    text-align: center;
+}
+
+.black-line {
+    background-color: black;
+    height: 2px;
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+}

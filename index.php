@@ -47,11 +47,6 @@
         var_dump($k);
         ?>
     </p>
-    <p>
-        <?php
-
-        ?>
-    </p>
     <!-- END OF BOOLEAN -->
 
     <div class="black-line"></div>
@@ -77,6 +72,8 @@
     </p>
     <!-- END OF ARRAY -->
 
+    <div class="black-line"></div>
+
     <!-- ASSOCIATIVE ARRAY -->
     <?php
     // $m["satu"] = 1;
@@ -98,6 +95,93 @@
         ?>
     </p>
     <!-- END OF ASSOCIATIVE ARRAY -->
+
+    <div class="black-line"></div>
+
+    <!-- MULTIDIMENSIONAL ARRAY -->
+    <?php
+    $n = [1, 2, [3, 4, 5, 6]];
+    $o = [7, 8, 9, 10];
+    $q = [11, 12, 13, 14, 15];
+    $r = ["iniA" => $n, "iniB" => $o, "iniC" => $q];
+    ?>
+    <p>
+        <?php
+        echo $r["iniA"][2][1] . "<br>";
+        print_r($n);
+        echo "<br>";
+        var_dump($n);
+        ?>
+    </p>
+    <!-- END OF MULTIDIMENSIONAL ARRAY -->
+
+    <div class="black-line"></div>
+
+    <!-- REFERENCE PARAMETER -->
+    <?php
+    function ubahNomor(&$pertama)
+    {
+        $pertama = 10;
+    }
+    ?>
+    <p>
+        <?php
+        $pertama = 12;
+        ubahNomor($pertama);
+        echo $pertama;
+        ?>
+    </p>
+    <!-- END OF REFERENCE PARAMETER -->
+
+    <div class="black-line"></div>
+
+    <!-- WRITE AND READ FILES -->
+    <?php
+    $isi = "Apa kabar?\n";
+    file_put_contents("isi.txt", $isi);
+    // file_put_contents("isi.txt", $isi, FILE_APPEND);
+    $isiFile = file_get_contents("isi.txt");
+    ?>
+    <p>
+        <?php
+        echo $isiFile;
+        ?>
+    </p>
+    <?php
+    $anggota = [
+        ['nama' => 'toni', 'umur' => 20],
+        ['nama' => 'adi', 'umur' => 21],
+        ['nama' => 'budi', 'umur' => 19],
+        ['nama' => 'roni', 'umur' => 22]
+    ];
+    ?>
+    <!-- <p>
+        <?php
+        // $data = serialize($anggota);
+        // file_put_contents("data.txt", $data);
+        // echo $output = file_get_contents('data.txt');
+        // $hasil = unserialize($output);
+        // echo "<br>";
+        // echo "<br>";
+        // print_r($hasil);
+        ?>
+    </p> -->
+    <p>
+        <?php
+        $data = json_encode($anggota);
+        file_put_contents("data.txt", $data);
+        echo $output = file_get_contents('data.txt');
+        $hasil = json_decode($output, true);
+        echo "<br>";
+        echo "<br>";
+        print_r($hasil);
+        ?>
+    </p>
+    <!-- END OF WRITE AND READ FILES -->
+
+    <div class="black-line"></div>
+
+
 </body>
 
 </html>

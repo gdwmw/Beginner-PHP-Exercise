@@ -1,0 +1,1 @@
+[{"nama":"toni","umur":20},{"nama":"adi","umur":21},{"nama":"budi","umur":19},{"nama":"roni","umur":22}]

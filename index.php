@@ -181,7 +181,8 @@
 
     <div class="black-line"></div>
 
-    <button onclick="document.location = 'todo.php'" style="display: block; margin: 0 auto;">TO DO</button>
+    <button onclick="document.location = 'todo.php'" style="display: block; margin: 0 auto;">Todo App</button>
+    <button onclick="document.location = 'mysql.php'" style="display: block; margin: 0 auto;">mySQL</button>
 
 
 </body>
